@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.udrumobile.foodapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.github.nitrico.mvp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Zack">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <!-- Required for Lint -->
+                <!-- <action android:name="android.intent.action.VIEW" /> -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+                <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+                <!-- <data -->
+                <!-- android:host="sample.numberpicker.travijuu.com" -->
+                <!-- android:pathPrefix="/main" -->
+                <!-- android:scheme="http" /> -->
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:label="Register Activity" />
+        <activity
+            android:name=".user.MainActivityUser"
+            android:theme="@style/Zackie" />
+        <activity
+            android:name=".admin.MainActivityAdmin"
+            android:label="@string/title_activity_main_admin"
+            android:theme="@style/Zackie" />
+        <activity
+            android:name=".owner.MainActivityOwner"
+            android:label="@string/title_activity_main_owner"
+            android:theme="@style/Zackie" />
+        <activity android:name=".user.ShowResActivity" />
+        <activity android:name=".user.ListfoodActivity" />
+        <activity android:name=".user.ShowfoodActivity" />
+        <activity android:name=".owner.UpdatefoodActivity" />
+        <activity
+            android:name=".owner.dialogstatus.ScrollingActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".user.ListOrderActivity" />
+        <activity android:name=".owner.ListOrderFoodActivity" />
+        <activity android:name=".admin.UpdateResActivity"></activity>
+    </application>
+
+</manifest>

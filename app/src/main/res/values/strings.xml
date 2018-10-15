@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Two way Ordering System</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_main">Two way Ordering System</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main_admin">MainActivityAdmin</string>
+    <string name="title_activity_main_owner">MainActivityOwner</string>
+
+    <string name="increment">+</string>
+    <string name="decrement">-</string>
+    <string name="display">1</string>
+    <string name="item_1">item1</string>
+    <string name="item_2">item2</string>
+
+    <string name="title_pager">Status Foods</string>
+    <string name="label_visible_dot_count">Visible dot count</string>
+    <string name="label_page_count">Page count</string>
+
+    <string name="title_recycler">RecyclerView</string>
+
+
+</resources>

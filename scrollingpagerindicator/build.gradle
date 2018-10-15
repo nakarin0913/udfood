@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply from: "$project.rootDir/gradle/publish-lib.gradle"
+
+def customGradleScript = "$project.rootDir/gradle/local.gradle"
+if(new File(customGradleScript).exists()){
+    apply from: customGradleScript
+}
+
+android {
+    compileSdkVersion rootProject.compileSdk
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdk
+        targetSdkVersion rootProject.targetSdk
+    }
+
+    libraryVariants.all {
+        it.generateBuildConfig.enabled = false
+    }
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+}
+
+dependencies {
+    compileOnly "com.android.support:support-core-ui:$rootProject.supportVersion"
+    compileOnly "com.android.support:recyclerview-v7:$rootProject.supportVersion"
+}
