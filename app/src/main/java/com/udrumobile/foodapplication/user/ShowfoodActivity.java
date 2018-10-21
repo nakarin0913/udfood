@@ -39,6 +39,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,9 +120,7 @@ public class ShowfoodActivity extends AppCompatActivity {
             txt_price.setText(getdt.PricefoodAll.get(id_food_all));
             full_latlon = getdt.LatLon_Res.get(id_food_all);
             imageView.setImageBitmap(getdt.BitmapFoodAll.get(id_food_all));
-        }
-
-        else if (id_food_rec != 999999) {
+        } else if (id_food_rec != 999999) {
             id_get = id_food_rec;
             txt_name.setText(getdt.NamefoodAll_Rec.get(id_food_rec));
             txt_about.setText(getdt.AboutfoodAll_Rec.get(id_food_rec));
@@ -151,11 +150,10 @@ public class ShowfoodActivity extends AppCompatActivity {
                     double distance = CalculateDistance(getdt.loca_user.latitude, lat_des, getdt.loca_user.longitude, lon_des, 0, 0);
 
                     if (distance <= getdt.MAX_Mater) {
-                        if(getdt.Orb_Select != 0){
+                        if (getdt.Orb_Select != 0) {
                             Log.e("Exec", "Exec().execute()");
                             new Exec().execute();
-                        }
-                        else{
+                        } else {
                             Log.e("ExecOrderBuy_ID", "ExecOrderBuy_ID");
                             new ExecOrderBuy_ID().execute();
                         }
@@ -170,7 +168,6 @@ public class ShowfoodActivity extends AppCompatActivity {
 
             }
         });
-
 
 
     }
@@ -196,25 +193,31 @@ public class ShowfoodActivity extends AppCompatActivity {
 
 
         LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-
-        // Keep track of user location.
-        // Use callback/listener since requesting immediately may return null location.
-        // IMPORTANT: TO GET GPS TO WORK, MAKE SURE THE LOCATION SERVICES ON YOUR PHONE ARE ON.
-        // FOR ME, THIS WAS LOCATED IN SETTINGS > LOCATION.
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 10, new Listener());
         // Have another for GPS provider just in case.
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 10, new Listener());
         // Try to request the location immediately
         Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-        if (location == null){
+        if (location == null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
             location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         }
         if (location != null){
+            Toast.makeText(getApplicationContext(),"พบตำแหน่งของคุณแล้ว สั่งอาหารได้", Toast.LENGTH_LONG).show();
             handleLatLng(location.getLatitude(), location.getLongitude());
         }
-        Toast.makeText(getApplicationContext(),
-                "Trying to obtain GPS coordinates. Make sure you have location services on.",
-                Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),
+//                "Trying to obtain GPS coordinates. Make sure you have location services on.",
+//                Toast.LENGTH_SHORT).show();
     }
 
     private void BackButton() {
@@ -307,7 +310,7 @@ public class ShowfoodActivity extends AppCompatActivity {
     }
 
     private void handleLatLng(double latitude, double longitude){
-        Log.v("TAG", "(" + latitude + "," + longitude + ")");
+        getdt.loca_user = new LatLng(latitude, longitude);
     }
 
 

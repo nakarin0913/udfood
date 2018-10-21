@@ -1,36 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="27"
-    build-mode="COLD"
-    density="xhdpi"
+    abi="x86"
+    api-level="25"
+    build-mode="HOT_WARM"
+    density="420dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
     plugin-version="3.2.1"
-    timestamp="1539590186915"
+    timestamp="1540130701155"
     token="-5729744183218023942"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="11304" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="551" />
+        duration="0" />
     <task
         name="verifier"
-        duration="482" />
+        duration="0" />
 
     <artifact
-        location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-        type="SPLIT" />
+        location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
         build-mode="FULL"
-        timestamp="1539589677927"
+        timestamp="1540129854878"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -66,20 +65,24 @@
             location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
             location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1539590186915"
-        verifier="COLD_SWAP_REQUESTED" >
+        timestamp="1540130507386"
+        verifier="FIELD_ADDED" >
         <artifact
             location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="HOT_WARM"
+        timestamp="1540130701155"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="D:\PeeA\UdonFoodWeb Services\app\build\intermediates\instant-run-resources\resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

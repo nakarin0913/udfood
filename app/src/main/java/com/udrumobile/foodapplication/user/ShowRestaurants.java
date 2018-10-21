@@ -130,6 +130,7 @@ public class ShowRestaurants extends Fragment implements OnMapReadyCallback {
 
     @Override
     public void onDetach() {
+        googleMap.clear();
         super.onDetach();
         new ExecuteRes().cancel(true);
     }

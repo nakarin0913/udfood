@@ -975,6 +975,7 @@ id blocking
 id bottom
 id btnRegister
 id btn_add
+id btn_calc
 id btn_checkout
 id buttonOptimg
 id buttonPanel
@@ -1026,6 +1027,8 @@ id editResAbout
 id editResName
 id editResWorkingtime
 id editTextImageName
+id edit_Ed
+id edit_St
 id edit_needmore
 id edit_query
 id edtPassword
@@ -1260,6 +1263,8 @@ id txt_qty3
 id txt_resname
 id txt_status
 id txt_status2
+id txt_sum
+id txt_sum2
 id txt_sumprice
 id uniform
 id up

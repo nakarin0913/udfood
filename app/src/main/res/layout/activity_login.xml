@@ -72,7 +72,7 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:hint="อีเมลล์"
-                android:text="nakarin@gmail.com"
+                android:text="user@gmail.com"
                 android:textColor="@color/colorPrimary"
                 android:textColorHint="@color/colorLightGray"
                 android:textSize="14sp">

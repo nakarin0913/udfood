@@ -37,9 +37,9 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int decrement = 0x7f08004f;
-        public static final int display = 0x7f080057;
-        public static final int increment = 0x7f08008c;
+        public static final int decrement = 0x7f080050;
+        public static final int display = 0x7f080058;
+        public static final int increment = 0x7f08008f;
     }
     public static final class layout {
         private layout() {}
